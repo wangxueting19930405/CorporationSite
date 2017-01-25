@@ -61,35 +61,10 @@
 				display: none;
 			}
 		}
-		@media screen and (min-width: 550px) and (max-width: 800px) {
-			main{
-				height: 1899px;
-			}
-			.service{
-				width: 100% !important;
-				height: 583px !important;
-			}
-			.service-combine {
-			    height: 260px;
-			    float: left;
-			}
-			.third-service {
-			    margin: 20px 0 0;
-			    float: none !important;
-			}
-			.service-box{
-				clear: both;
-				margin: 20px 0 0;
-			}
-			.nakami,.foot-image-link,.nakami img{
-				width: 80px;
-				height: 80px;
-			}
-			.foot-column{
-				font-size: 12px;
-			}
-		}
 		@media screen and (min-width: 480px) and (max-width: 800px) {
+			main{
+				height: 2060px;
+			}
 			.product-container {
 				height: 380px;
 			}
@@ -126,7 +101,7 @@
 				height: 100%;
 			}
 			.foot-combine{
-				width: 100vh;
+				width: 100%;
 				height: 150px;
 			}
 			.foot-column{
@@ -146,6 +121,112 @@
 			    font-size: 11px;
 			}
 		}
+		@media screen and (min-width: 550px) and (max-width: 800px) {
+			main{
+				height: 1899px;
+			}
+			.center {
+			    margin: 0 auto;
+			    width: 540px;
+			}
+			.service{
+				width: 100% !important;
+				height: 583px !important;
+			}
+			.service-combine {
+				width: 506px;
+			    height: 260px;
+			    float: left;
+			    margin-bottom: 10px;
+			}
+			.second-service {
+			    margin: 0;
+			}
+			.third-service {
+			    margin: 20px 0 0;
+			    float: none !important;
+			}
+			.service-box{
+				clear: both;
+				margin: 20px 0 0;
+			}
+			a.foot-image-link img {
+			    margin: 20px 0 0 10px;
+			}
+			.nakami,.foot-image-link,.nakami img{
+				width: 80px;
+				height: 80px;
+			}
+			.foot-column{
+				font-size: 12px;
+			}
+		}
+		@media screen and (max-width:549px ) {
+			.service {
+			     width: 100%; 
+			}
+			.service-name {
+			    float: none;
+			    height: 220px;
+			}
+			.center {
+			    margin: 0 auto;
+			    width: 240px;
+			}
+			.service-name>p {
+			    font-size: 12px;
+			}
+			.service-name-title {
+		    	font-size: 14px;
+		    	font-weight: 500;
+			}
+			.first-service {
+	    		margin-bottom: 10px;
+			}
+			.service-combine {
+    			margin-bottom: 10px;
+			}
+		}
+
+		@media screen and (max-width: 479px) {
+			main {
+			    height: 2225px;
+			}
+			p.product-details {
+		    font-size: 12px;
+			}
+
+		a.showProductPage {
+		    width: 66px;
+		    height: 14px;
+		    font-size: 12px;
+		    padding: 1px 4px;
+		    border-radius: 3px;
+		}
+		.product-container {
+		    height: 423px;
+		}
+		a.showProductPage {
+		    bottom: 12px;
+		}
+		.foot-combine {
+		    width: 100%;
+		}
+		.foot-column {
+		    width: 100%;
+		    font-size: 11px;
+		}
+		.foot,footer {
+		    height: 550px;
+		}
+		.foot-column {
+		    border: none;
+		}
+		a.foot-image-link>img {
+		    width: 70px;
+		    height: 60px;
+		}
+	}
 	</style>
 </head>
 
@@ -243,23 +324,25 @@
 		<div class="service devide-margin">
 			<h1 class="menu-title">人材派遣サービス</h1>
 			<h2 class="menu-subtitle">私たちが携わってきたサービス</h2>
-			<div class="service-combine">
-				<div class="service-name first-service left">
-					<h2 class="service-name-title">スマートソリューション</h2>
-					<p>社会の未来を変革するスマートテクノロジー技術の研究・開発と、ウェブサービスや業務システムを支えるアプリ開発・WEB系システム開発を行います。</p>
-					<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+			<div class="center">
+				<div class="service-combine">
+					<div class="service-name first-service left">
+						<h2 class="service-name-title">スマートソリューション</h2>
+						<p>社会の未来を変革するスマートテクノロジー技術の研究・開発と、ウェブサービスや業務システムを支えるアプリ開発・WEB系システム開発を行います。</p>
+						<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+					</div>
+					<div class="service-name second-service left">
+						<h2 class="service-name-title">WEBマーケティングコミュニケーション</h2>
+						<p>デジタル領域での人と社会・企業のコミュニケーションを進化させるデジタルマーケティング、クラウドCRM、WEBサイト構築・運営を行います。</p>
+						<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+					</div>
 				</div>
-				<div class="service-name second-service left">
-					<h2 class="service-name-title">WEBマーケティングコミュニケーション</h2>
-					<p>デジタル領域での人と社会・企業のコミュニケーションを進化させるデジタルマーケティング、クラウドCRM、WEBサイト構築・運営を行います。</p>
-					<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
-				</div>
-			</div>
-			<div class="service-box">
-				<div class="service-name third-service left">
-					<h2 class="service-name-title">ITインフラクラウドテクノロジー</h2>
-					<p>社会・企業のITインフラ基盤の構築と安定運用をベースに、最新のクラウドテクノロジーや>情報セキュリティ分野に取り組んでいます。</p>
-					<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+				<div class="service-box">
+					<div class="service-name third-service left">
+						<h2 class="service-name-title">ITインフラクラウドテクノロジー</h2>
+						<p>社会・企業のITインフラ基盤の構築と安定運用をベースに、最新のクラウドテクノロジーや>情報セキュリティ分野に取り組んでいます。</p>
+						<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+					</div>
 				</div>
 			</div>
 		</div>
