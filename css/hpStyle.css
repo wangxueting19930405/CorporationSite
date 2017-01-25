@@ -6,7 +6,7 @@ html,body{
 body{
 	font-family: HelveticaNeue-Light,Arial, Meiryo, メイリオ, sans-serif;
 }
-html,body,ul,li,a,p,h1,h2{
+html,body,ul,li,a,p,h1,h2,nav{
 	margin: 0;
 	padding: 0;
 }
@@ -24,9 +24,45 @@ a{
 	font-family: 'Ã©ÂÅ Ã£â€šÂ´Ã£â€šÂ·Ã£Æ’Æ’Ã£â€šÂ¯','Verdana';
 	font-weight: 800;
 }
+.menu-forphone{
+	height: 100vh;
+	width: 30%;
+	background:#6f5dce;
+	position: fixed;
+	z-index: 10000;
+}
+.menu-forphone a{
+	display: block;
+	color: white;
+	height: 32px;
+	padding: 10px;
+}
+.menu-forphone :nth-child(1) {
+    font-size: 24px;
+    line-height: 26px;
+    color: white;
+    padding: 5px;
+}
 .menu-title{
 	text-align: center;
 	font-weight: 300;
+	font-size: 32px;
+	line-height: 32px;
+}
+.menu-subtitle{
+	font-size: 12px;
+	color: blue;
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.goToTop{
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	z-index: 3000;
+	right: 0;
+	bottom: 0;
 }
 header{
 	position: fixed;
@@ -49,11 +85,27 @@ header{
 	width: 70px;
 	height: 50px;
 	display: block;
+	color: white;
+}
+.phone-menu{
+	border-radius: 4px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 36px;
+	height: 32px;
+	background-color: blue;
+	color: white;
+	text-align: center;
+	font-size: 24px;
+	display: none;
+
 }
 main{
-	height: 100%;
+	height: 1590px;
 	width: 100%;
-	padding-top: 100px;
 }
 .backgroung-img{
 	width: 80%;
@@ -91,21 +143,35 @@ main{
 	animation-iteration-count: infinite;
 	animation-duration: 5s;
 }
-.text-title,.text-message{
-	display: block;
+.text{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.company-message{
 	position: absolute;
+	top: 240px;
 	left: 0;
 	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 2000;
-	font-size: 24px;
+	margin: 0 auto;
+	font-size: 52px;
+	font-weight: 500;
+	width: 572px;
 	color: white;
-	width: 60px;
-	height: 30px;
-	margin: auto auto;
+	letter-spacing: 0;
 }
-nav{
+.message{
+	position: absolute;
+	top: 330px;
+	left: 100px;
+	font-size: 26px;
+	color: wheat;
+	visibility: hidden;
+}
+.message-first{
+	
+}
+.menu{
 	padding-top: 30px;
 	font-size: 16px;
 	margin-left: 50px;
@@ -197,7 +263,7 @@ nav>a:hover::after{
 }
 
 .product-container {
-    width: 1000px;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
     border-bottom: 1px dashed rgba(165, 163, 163, 0.67);
@@ -206,8 +272,8 @@ nav>a:hover::after{
     letter-spacing: 1px;
 }
 .product-container{
-	text-indent: 32px;
 	padding-bottom: 4px;
+	height: 350px;
 }
 .product-link{
 	width: 300px;
@@ -216,10 +282,37 @@ nav>a:hover::after{
     display: block;
     margin-bottom: 10px;
 }
+.product-details{
+	margin: 0 auto;
+	text-indent: 32px;
+	height: 70px;
+	width: 90%;
+	padding: 5px;
+	box-sizing: border-box;
+	text-overflow: ellipsis;
+}
 .product-container img {
     width: 300px;
     height: 250px;
     border: 1px red solid;
+}
+a.showProductPage{
+	
+background-color: blue;
+	
+color: white;
+	
+padding: 3px 8px;
+	
+width: 80px;
+	
+height: 17px;
+	
+display: block;
+	
+position: absolute;
+	
+right: 6%;
 }
 .service {
     width: 800px;
@@ -285,6 +378,76 @@ a.service-button-link {
 }
 
 a.service-button-link > span {
-	margin-right: 4px;	
+	margin-right: 4px;
 	margin-left: 3px;
+}
+footer {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    background: rgba(94,5,158,1);
+    background: -moz-linear-gradient(45deg, rgba(94,5,158,1) 0%, rgba(47,24,201,1) 94%, rgba(22,7,162,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(94,5,158,1)), color-stop(94%, rgba(47,24,201,1)), color-stop(100%, rgba(22,7,162,1)));
+    background: -webkit-linear-gradient(45deg, rgba(94,5,158,1) 0%, rgba(47,24,201,1) 94%, rgba(22,7,162,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(94,5,158,1) 0%, rgba(47,24,201,1) 94%, rgba(22,7,162,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(94,5,158,1) 0%, rgba(47,24,201,1) 94%, rgba(22,7,162,1) 100%);
+    background: linear-gradient(45deg, rgba(94,5,158,1) 0%, rgba(47,24,201,1) 94%, rgba(22,7,162,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e059e', endColorstr='#1607a2', GradientType=1 );
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+}
+.foot {
+    width: 80%;
+    height: 194px;
+    margin: 0 auto;
+    position: relative;
+    top: 24px;
+}
+.foot-column {
+    width: 25%;
+    height: 80%;
+    box-sizing: border-box;
+    float: left;
+    border-right: 1px silver solid;
+    margin: auto 0;
+}
+.nakami{
+	margin-left: 10px;
+}
+.nakami a :hover{
+	color: white;
+}
+.foot-column a {
+    display: block;
+}
+.addressAndTel{
+	border: none;
+}
+.addressAndTel h1 {
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 16px;
+}
+.addressAndTel p {
+    color: #afaeae;
+    font-size: 12px;
+}
+.address {
+    margin-bottom: 12px;
+}
+.copyright {
+    position: absolute;
+    font-size: 12px;
+    width: 100%;
+    bottom: 0;
+    color: silver;
+    background-color: #0a0256;
+}
+.copyright p {
+    width: 93px;
+    margin: 0 auto;
+}
+.devide-margin{
+	margin-top: 60px;
 }
