@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>company</title>
 	<link rel="stylesheet" type="text/css" href="css/hpStyle.css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/kurukuru.js"></script>
 	<meta name="author" content="Aries_Ou">
 	<meta name="robots" content="index,follow">
@@ -14,23 +14,178 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<link rel="shortcut icon" href="">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style type="text/css">
+		@media screen and (min-width:1130px ) {
+			.menu{
+				display: block !important;
+			}
+			.carousel{
+				width: 1100px;
+
+			}
+			.product-container{
+				width: 1100px;
+    			height: 253px;
+    			position: relative;
+    			margin-bottom: 50px;
+			}
+			a.product-link {
+		    width: 300px;
+		    height: 250px;
+			}
+			.product-link,.product-details{
+				float: left;
+    			width: 800px;
+			}
+			p.product-details {
+			    width: 740px;
+			    margin-left: 90px;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			}
+			a.showProductPage {
+		    position: absolute;
+		    right: 0;
+		    bottom: 3px;
+			}
+			main{
+				height: 1337px;
+			}
+		}
+		@media screen and (max-width: 899px) {
+			.phone-menu{
+				display: block;
+			}
+			.menu{
+				display: none;
+			}
+		}
+		@media screen and (min-width: 550px) and (max-width: 800px) {
+			main{
+				height: 1899px;
+			}
+			.service{
+				width: 100% !important;
+				height: 583px !important;
+			}
+			.service-combine {
+			    height: 260px;
+			    float: left;
+			}
+			.third-service {
+			    margin: 20px 0 0;
+			    float: none !important;
+			}
+			.service-box{
+				clear: both;
+				margin: 20px 0 0;
+			}
+			.nakami,.foot-image-link,.nakami img{
+				width: 80px;
+				height: 80px;
+			}
+			.foot-column{
+				font-size: 12px;
+			}
+		}
+		@media screen and (min-width: 480px) and (max-width: 800px) {
+			.product-container {
+				height: 380px;
+			}
+			.product-details{
+		 		height: 90px;
+		 		font-size: 13px;
+			}
+			a.showProductPage {
+			    width: 70px;
+			    font-size: 13px;
+			    line-height: 15px;
+			}
+			h1.menu-title {
+			    font-size: 24px;
+			    line-height: 24px;
+			}
+
+			.devide-margin {
+			    margin-top: 40px;
+			}
+			.service{
+				height: 323px;
+			}
+			h2.service-name-title {
+			    font-size: 18px;
+			    font-weight: 100;
+			    line-height: 20px;
+			}
+			footer{
+				height: 320px;
+			}
+			.nakami{
+				width: 80%;
+				height: 100%;
+			}
+			.foot-combine{
+				width: 100vh;
+				height: 150px;
+			}
+			.foot-column{
+				width: 50%;
+				height: 140px;
+			}
+			.foot-column a{
+				width: 100%
+			}
+			.company-service {
+			    border: none;
+			}
+			.address h1,.tel h1 {
+			    font-size: 13px;
+			}
+			.address p,.tel p {
+			    font-size: 11px;
+			}
+		}
+	</style>
 </head>
 
 <body>
+	<nav class="menu-forphone"  style="display: none" id="menu">
+		<p>株式会社セラク</p>
+		<a href="#">製品</a>
+		<a href="#">サービス</a>
+		<a href="#">会社情報</a>
+		<a href="#">採用情報</a>
+		<a href="#">お問い合わせ</a>
+	</nav>
+	<div class="goToTop"><a href=""><i class="fa fa-circle-o" aria-hidden="true"></i><p>Top</p></a></div>
 	<header class="verdana">
 		<div class="header-container">
 			<div class="company-logo left">
 				<a href="" class="company-logo-a">
-					<img src="data:image/png;base64,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"
-									alt="" class="logo-img"></a>
+					<img src="image/companyLogo.png" alt="" class="logo-img"></a>
 			</div>
-			<nav class="menu left">
+			<div class="phone-menu" id="phoneNav">
+				<i class="fa fa-bars" aria-hidden="true"></i>
+			</div>
+			<nav class="menu left" >
 				<a href="#">製品</a>
 				<a href="#">サービス</a>
 				<a href="#">会社情報</a>
 				<a href="#">採用情報</a>
 				<a href="#">お問い合わせ</a>
 			</nav>
+			<script type="text/javascript">
+				var phoneNav = document.getElementById("phoneNav");
+				var menu = document.getElementById("menu");
+				EventUtil.addHandler(phoneNav,"click",function() {
+					if (menu.style.display=="none") {
+						menu.style.display="block";
+					}else{
+						menu.style.display="none";
+					}
+				})
+			</script>
 		</div>
 	</header>
 	<div class="carousel" id="carousel">
@@ -49,53 +204,116 @@
 		<a href="" index=4 style="background-image: url(http://srmcllc.com/wp-content/uploads/2016/05/home-slide-corp1.jpg);">
 			<div class="changeOpacity" id="changeOpacity"></div>
 		</a>
-		<div class="text">
-			<p class="text-message">IT企業</p>
+		<div class="text" id="textShow">
+			<h1 class="company-message">私たちー株式会社セラク</h1>
+			<p class="message message-first">IoTプラットフォームを始め、インフラ、WEB、アプリなど、<br>総合的なITソリューションを提供しています</p>
+			<p class="message message-second">お客様それぞれのビジネス・ニーズに応じて、<br>信頼のいただけるシステム・サービスの提供に努めています</p>
+			<p class="message message-second">お客様がより高いビジネス・パフォーマンスを達成できるよう、<br>お客様と協力して革新の実現に取り組んできました</p>
+			<p class="message message-forth">社員たちは様々なやりがいのある仕事を通じて、<br>自身の成長を実現していただけます</p>
+			<p class="message message-fifth">未経験向けの研修カリキュラムがしっかりとあります</p>
 		</div>
 		<div class="blow"><a href="#info" class="blow-link"><i class="fa fa-angle-down" aria-hidden="true"></i></a></div>
 	</div>
 	<main>
 		<div id="info"></div>
-		<div class="seihin">
+		<div class="seihin devide-margin">
 			<h1 class="menu-title">製品</h1>
+			<h2 class="menu-subtitle">私たち、力を入れて、世の中に出した製品</h2>
 			<div id="product" class="product">
 				<div class="product-container">
 					<a class="product-link" href=""><img src="image/greenCloud.png"></a>
-					<p>もっとも簡単に農業にITを導入する事ができます。 ハウス内の環境を計測するセンサーを搭載したみどりボックスをハウスの中に置くだけで、 ハウスの中の状態を離れた所から確認できるようになります。
+					<p class="product-details">もっとも簡単に農業にITを導入する事ができます。 ハウス内の環境を計測するセンサーを搭載したみどりボックスをハウスの中に置くだけで、 ハウスの中の状態を離れた所から確認できるようになります。
 					</p>
+					<a href="" class="showProductPage">詳しく見る</a>
 				</div>
 				<div class="product-container">
 					<a class="product-link" href=""><img src="image/seimen.jpg"></a>
-					<p>鏡面にはニュースや天気、時刻などが表示されており、鏡を見ながら情報をチェックできる。画面の操作は四隅に配置された人感センサーで行なう。直接鏡面に触れると手の脂が付着してしまうが、この仕様なら鏡を汚さずに操作できる。
+					<p class="product-details">鏡面にはニュースや天気、時刻などが表示されており、鏡を見ながら情報をチェックできる。画面の操作は四隅に配置された人感センサーで行なう。直接鏡面に触れると手の脂が付着してしまうが、この仕様なら鏡を汚さずに操作できる。
 					</p>
+					<a href="" class="showProductPage">詳しく見る</a>
 				</div>
 				<div class="product-container">
 					<a class="product-link" href=""><img src="image/tenpura.jpg"></a>
-					<p>天ぷら職人となって天ぷらを揚げる大人気を誇るゲームアプリ「天ぷら侍」の二作目！舞台を江戸時代に移し、新システム・新要素でさらに熱い！
+					<p class="product-details">天ぷら職人となって天ぷらを揚げる大人気を誇るゲームアプリ「天ぷら侍」の二作目！舞台を江戸時代に移し、新システム・新要素でさらに熱い！
 					</p>
+					<a href="" class="showProductPage">詳しく見る</a>
 				</div>
 			</div>
 		</div>
-		<div class="service">
+		<div class="service devide-margin">
 			<h1 class="menu-title">人材派遣サービス</h1>
-			<p></p>
-			<div class="service-name left">
-				<h2 class="service-name-title">スマートソリューション</h2>
-				<p>社会の未来を変革するスマートテクノロジー技術の研究・開発と、ウェブサービスや業務システムを支えるアプリ開発・WEB系システム開発を行います。</p>
-				<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+			<h2 class="menu-subtitle">私たちが携わってきたサービス</h2>
+			<div class="service-combine">
+				<div class="service-name first-service left">
+					<h2 class="service-name-title">スマートソリューション</h2>
+					<p>社会の未来を変革するスマートテクノロジー技術の研究・開発と、ウェブサービスや業務システムを支えるアプリ開発・WEB系システム開発を行います。</p>
+					<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+				</div>
+				<div class="service-name second-service left">
+					<h2 class="service-name-title">WEBマーケティングコミュニケーション</h2>
+					<p>デジタル領域での人と社会・企業のコミュニケーションを進化させるデジタルマーケティング、クラウドCRM、WEBサイト構築・運営を行います。</p>
+					<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+				</div>
 			</div>
-			<div class="service-name left">
-				<h2 class="service-name-title">WEBマーケティングコミュニケーション</h2>
-				<p>デジタル領域での人と社会・企業のコミュニケーションを進化させるデジタルマーケティング、クラウドCRM、WEBサイト構築・運営を行います。</p>
-				<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
-			</div>
-			<div class="service-name left">
-				<h2 class="service-name-title">ITインフラクラウドテクノロジー</h2>
-				<p>社会・企業のITインフラ基盤の構築と安定運用をベースに、最新のクラウドテクノロジーや>情報セキュリティ分野に取り組んでいます。</p>
-				<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+			<div class="service-box">
+				<div class="service-name third-service left">
+					<h2 class="service-name-title">ITインフラクラウドテクノロジー</h2>
+					<p>社会・企業のITインフラ基盤の構築と安定運用をベースに、最新のクラウドテクノロジーや>情報セキュリティ分野に取り組んでいます。</p>
+					<a href="#" class="service-button-link"><span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></span>詳しくはこちら</a>
+				</div>
 			</div>
 		</div>
 	</main>
+	<footer class="devide-margin">
+		<div class="foot">
+			<div class="foot-combine">
+				<div class="foot-column">
+					<div class="nakami">
+						<div class="foot-logo">
+							<a href="" class="foot-image-link"><img src="image/companyLogo.png"></a>
+						</div>
+					</div>
+				</div>
+				<div class="foot-column company-service">
+					<div class="nakami">
+						<a href="">インフォメーション</a>
+						<a href="">セラクのサービス</a>
+						<a href="">セラクのビジネス</a>
+						<a href="">セラクについて</a>
+						<a href="">IR情報</a>
+						<a href="">採用情報</a>
+						<a href="">お問い合わせ</a>
+					</div>
+				</div>
+			</div>
+			<div class="foot-combine">
+				<div class="foot-column company-info">
+					<div class="nakami">
+						<a href="">ISMS基本情報</a>
+						<a href="">情報セキュリティポリシー</a>
+						<a href="">このサイトについて</a>
+						<a href="">プライバシーポリシー</a>
+						<a href="">派遣法に基づく情報提供</a>
+					</div>
+				</div>
+				<div class="foot-column addressAndTel">
+					<div class="nakami">
+						<div class="address">
+							<h1>住所</h1>
+							<p>東京都新宿区西新宿2-7-9</p>
+						</div>
+						<div class="tel">
+							<h1>電話</h1>
+							<p>03-1234-1234</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<p>copyright © Aries</p>
+		</div>
+	</footer>
 </body>
 
 </html>

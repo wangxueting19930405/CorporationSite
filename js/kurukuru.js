@@ -60,8 +60,6 @@ function changeIndexPlusOne() {
 			var index = images[i].getAttribute("index");
 			 images[i].style.top=parseInt(height)*index+"px";
 		}
-		
-		
 
 	}
 	function change() {
@@ -86,5 +84,24 @@ function changeIndexPlusOne() {
 		setup();
 			
 	}
+
+var text = document.getElementById("textShow").getElementsByTagName("p");
+//text fadein
+var x = 0;
+var length=text.length;
+function textFadeIn() {
+		text[x].style.visibility = "visible";
+		setTimeout(
+			function() {text[x].style.visibility ="hidden";
+		},3000);
+		
+		// if (x>length) {
+		// 	x=0;
+		// }else{
+		// 	x++;
+		// }
+	 // 	setTimeout(textFadeIn,2000);
+	 }
+setTimeout(textFadeIn,2000);
 
 });
