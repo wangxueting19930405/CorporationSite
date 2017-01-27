@@ -53,6 +53,11 @@
 				height: 1337px;
 			}
 		}
+		@media screen and (min-width: 900px){
+			.menu-forphone{
+				transform: translate(-100%) !important;
+			}
+		}
 		@media screen and (max-width: 899px) {
 			.phone-menu{
 				display: block;
@@ -109,7 +114,8 @@
 				height: 140px;
 			}
 			.foot-column a{
-				width: 100%
+				width: 100%;
+				font-size: 12px;
 			}
 			.company-service {
 			    border: none;
@@ -128,6 +134,9 @@
 			.center {
 			    margin: 0 auto;
 			    width: 540px;
+			}
+			h1.company-message {
+			    font-size: 40px;
 			}
 			.service{
 				width: 100% !important;
@@ -153,7 +162,7 @@
 			a.foot-image-link img {
 			    margin: 20px 0 0 10px;
 			}
-			.nakami,.foot-image-link,.nakami img{
+			.nakami1,.foot-image-link,.nakami1 img{
 				width: 80px;
 				height: 80px;
 			}
@@ -172,6 +181,9 @@
 			.center {
 			    margin: 0 auto;
 			    width: 240px;
+			}
+			h1.company-message {
+			    font-size: 26px;
 			}
 			.service-name>p {
 			    font-size: 12px;
@@ -195,7 +207,19 @@
 			p.product-details {
 		    font-size: 12px;
 			}
-
+		header{
+			height: 60px;
+		}
+		.company-logo.left {
+    height: 20px;
+}
+.company-logo-a,.logo-img{
+	width: 30px;
+	height: 24px;
+}
+a.company-logo-a {
+    margin: 20px;
+}
 		a.showProductPage {
 		    width: 66px;
 		    height: 14px;
@@ -216,6 +240,9 @@
 		    width: 100%;
 		    font-size: 11px;
 		}
+		.foot-logo-column{
+			height: 80px;
+		}
 		.foot,footer {
 		    height: 550px;
 		}
@@ -231,13 +258,13 @@
 </head>
 
 <body>
-	<nav class="menu-forphone"  style="display: none" id="menu">
+	<nav class="menu-forphone"  style="transition: transform 0.25s ease-out;transform: translate(-100%);" id="menu">
 		<p>株式会社セラク</p>
-		<a href="#">製品</a>
-		<a href="#">サービス</a>
-		<a href="#">会社情報</a>
-		<a href="#">採用情報</a>
-		<a href="#">お問い合わせ</a>
+		<a href="#" class="menu-forphone-first">製品</a>
+		<a href="#" class="menu-forphone-second">サービス</a>
+		<a href="#" class="menu-forphone-third">会社情報</a>
+		<a href="#" class="menu-forphone-forth">採用情報</a>
+		<a href="#" class="menu-forphone-fifth">お問い合わせ</a>
 	</nav>
 	<div class="goToTop"><a href=""><i class="fa fa-circle-o" aria-hidden="true"></i><p>Top</p></a></div>
 	<header class="verdana">
@@ -260,43 +287,37 @@
 				var phoneNav = document.getElementById("phoneNav");
 				var menu = document.getElementById("menu");
 				EventUtil.addHandler(phoneNav,"click",function() {
-					if (menu.style.display=="none") {
-						menu.style.display="block";
+					if (menu.style.transform=="translate(-100%)") {
+						menu.style.transform="translate(0)";
 					}else{
-						menu.style.display="none";
+						menu.style.transform="translate(-100%)";
 					}
 				})
 			</script>
 		</div>
 	</header>
 	<div class="carousel" id="carousel">
-		<a href="" index=0 style="background-image: url(http://srmcllc.com/wp-content/uploads/2016/05/home-slide-edu1.jpg);">
+		<a href="" index=0 style="background-image: url(image/hp-01.jpg);">
 			<div class="changeOpacity"></div>
 		</a>
-		<a href="" index=1 style="background-image: url(http://srmcllc.com/wp-content/uploads/2016/05/home-slide-hc1.jpg);">
+		<a href="" index=1 style="background-image: url(image/hp-02.jpg);">
 			<div class="changeOpacity"></div>
 		</a>
-		<a href="" index=2 style="background-image: url(http://srmcllc.com/wp-content/uploads/2016/05/home-slide-edu2-1.jpg);">
+		<a href="" index=2 style="background-image: url(image/hp-03.jpg);">
 			<div class="changeOpacity"></div>
 		</a>
-		<a href="" index=3 style="background-image: url(http://srmcllc.com/wp-content/uploads/2016/05/home-slide-hc2.jpg);">
+		<a href="" index=3 style="background-image: url(image/hp-04.jpg);">
 			<div class="changeOpacity"></div>
 		</a>
-		<a href="" index=4 style="background-image: url(http://srmcllc.com/wp-content/uploads/2016/05/home-slide-corp1.jpg);">
+		<a href="" index=4 style="background-image: url(image/hp-05.jpg);">
 			<div class="changeOpacity" id="changeOpacity"></div>
 		</a>
 		<div class="text" id="textShow">
 			<h1 class="company-message">私たちー株式会社セラク</h1>
-			<p class="message message-first">IoTプラットフォームを始め、インフラ、WEB、アプリなど、<br>総合的なITソリューションを提供しています</p>
-			<p class="message message-second">お客様それぞれのビジネス・ニーズに応じて、<br>信頼のいただけるシステム・サービスの提供に努めています</p>
-			<p class="message message-second">お客様がより高いビジネス・パフォーマンスを達成できるよう、<br>お客様と協力して革新の実現に取り組んできました</p>
-			<p class="message message-forth">社員たちは様々なやりがいのある仕事を通じて、<br>自身の成長を実現していただけます</p>
-			<p class="message message-fifth">未経験向けの研修カリキュラムがしっかりとあります</p>
 		</div>
-		<div class="blow"><a href="#info" class="blow-link"><i class="fa fa-angle-down" aria-hidden="true"></i></a></div>
+		<div class="blow"><span class="blow-link"><i class="fa fa-angle-down" aria-hidden="true"></i></span></div>
 	</div>
 	<main>
-		<div id="info"></div>
 		<div class="seihin devide-margin">
 			<h1 class="menu-title">製品</h1>
 			<h2 class="menu-subtitle">私たち、力を入れて、世の中に出した製品</h2>
@@ -350,8 +371,8 @@
 	<footer class="devide-margin">
 		<div class="foot">
 			<div class="foot-combine">
-				<div class="foot-column">
-					<div class="nakami">
+				<div class="foot-column foot-logo-column">
+					<div class="nakami nakami1">
 						<div class="foot-logo">
 							<a href="" class="foot-image-link"><img src="image/companyLogo.png"></a>
 						</div>
