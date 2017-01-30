@@ -27,7 +27,13 @@ a{
 .menu-forphone{
 	height: 100vh;
 	width: 40%;
-	background:#6f5dce;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100 */
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #1e5799 0%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
 	position: fixed;
 	z-index: 10000;
 	transform: translate(-100%);
@@ -46,7 +52,7 @@ a{
     line-height: 26px;
     color: white;
     padding: 5px;
-    background-color: #9485e4;
+    background-color: #2277d4;
     width: 100%;
     box-sizing: border-box;
 }
@@ -58,7 +64,7 @@ a{
 }
 .menu-subtitle{
 	font-size: 12px;
-	color: blue;
+	color: #3f3ff1;
 	text-align: center;
 	font-weight: 600;
 	margin-bottom: 20px;
@@ -73,6 +79,11 @@ a{
 	text-align: center;
 	vertical-align: middle;
 	background: rgba(221, 222, 28, 0.69);
+}
+.link-toTop{
+	width: 100%;
+	display: block;
+	height: 100%;
 }
 header{
 	position: fixed;
@@ -106,7 +117,7 @@ header{
 	margin: auto;
 	width: 36px;
 	height: 32px;
-	background-color: blue;
+	background-color:#378ce8;
 	color: white;
 	text-align: center;
 	font-size: 24px;
@@ -186,7 +197,7 @@ main{
 	margin-left: 50px;
 	letter-spacing: 1px;
 }
-nav>a{
+.menu>a{
 	margin-right: 5px;
 	position: relative;
 	box-sizing: border-box;
@@ -194,7 +205,7 @@ nav>a{
 	padding: 3px;
 	z-index: 1;
 }
-nav>a::before,nav>a::after{
+.menu>a::before,nav>a::after{
 	position: absolute;
 	content: "";
 	box-sizing: border-box;
@@ -205,30 +216,30 @@ nav>a::before,nav>a::after{
 	height: 0;
 }
 
-nav>a::before{
+.menu>a::before{
 	top: 0;
 	left: 0;
 }
-nav>a::after{
+.menu>a::after{
 	right: 0;
 	bottom: 0;
 }
-nav>a:hover::before,>a:hover::after{
+.menu>a:hover::before,nav>a:hover::after{
 	width: 100%;
 	height: 100%;
 	animation-fill-mode: forwards;
 }
-nav>a:hover::before{
-	border-top-color: pink;
-	border-right-color: pink;
+.menu>a:hover::before{
+	border-top-color: #52b1fb;
+	border-right-color: #52b1fb;
 	-webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
           transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
           -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
 
 }
-nav>a:hover::after{
-	border-bottom-color: pink;
-    border-left-color: pink;
+.menu>a:hover::after{
+	border-bottom-color: #52b1fb;
+    border-left-color: #52b1fb;
     -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
           transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
 }
@@ -308,7 +319,7 @@ nav>a:hover::after{
 }
 a.showProductPage{
 	
-background-color: blue;
+background-color: #69cdfb;
 	
 color: white;
 	
@@ -322,7 +333,11 @@ display: block;
 	
 position: absolute;
 	
+bottom: 3%;
+	
 right: 6%;
+	
+box-shadow: 5px 5px 5px 0px #81b5cc;
 }
 .service {
     width: 800px;
@@ -419,7 +434,7 @@ footer {
     height: 140px;
     box-sizing: border-box;
     float: left;
-    border-right: 1px silver solid;
+    border-right: 1px #878b9a solid;
     margin: auto 0;
 }
 .nakami{
