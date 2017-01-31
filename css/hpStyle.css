@@ -461,6 +461,13 @@ footer {
 .address {
     margin-bottom: 12px;
 }
+.nakami a {
+    color: #adabab;
+}
+
+.address h1,.tel h1 {
+    color: #8a8888;
+}
 .copyright {
     position: absolute;
     font-size: 12px;
