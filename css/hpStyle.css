@@ -317,26 +317,16 @@ main{
     height: 250px;
     border: 1px red solid;
 }
-a.showProductPage{
-	
-background-color: #69cdfb;
-	
-color: white;
-	
-padding: 3px 8px;
-	
-width: 80px;
-	
-height: 17px;
-	
-display: block;
-	
-position: absolute;
-	
-bottom: 3%;
-	
-right: 6%;
-	
+a.showProductPage{	
+background-color: #69cdfb;	
+color: white;	
+padding: 3px 8px;	
+width: 80px;	
+height: 17px;	
+display: block;	
+position: absolute;	
+bottom: 3%;	
+right: 6%;	
 box-shadow: 5px 5px 5px 0px #81b5cc;
 }
 .service {
@@ -367,9 +357,6 @@ h2.service-name-title {
     right: 0;
     margin: 0 auto;
 }
-
-h2.service-name-title {}
-
 .service-name>p {
     font-size: 14px;
     letter-spacing: 1px;
